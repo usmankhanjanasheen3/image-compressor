@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JPG to PNG Converter Online Free</title>
+
+<meta name="description" content="Convert JPG and JPEG images to PNG online for free. Fast, simple and mobile-friendly JPG to PNG converter.">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+.container{
+    max-width:650px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+h1{
+    margin-top:0;
+}
+
+input,button{
+    width:100%;
+    padding:13px;
+    margin:10px 0;
+    box-sizing:border-box;
+    border-radius:10px;
+}
+
+input{
+    border:1px solid #ccc;
+}
+
+button{
+    border:0;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+canvas{
+    max-width:100%;
+    margin:15px 0;
+}
+
+#download{
+    display:none;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>JPG to PNG Converter</h1>
+
+<p>Convert JPG and JPEG images to PNG format online for free.</p>
+
+<input type="file" id="upload" accept="image/jpeg">
+
+<p id="info"></p>
+
+<canvas id="canvas"></canvas>
+
+<button onclick="convertImage()">Convert to PNG</button>
+
+<a id="download" download="converted-image.png">
+    <button>Download PNG Image</button>
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+let img = new Image();
+
+document.getElementById("upload").addEventListener("change", function(e){
+
+    const file = e.target.files[0];
+
+    if(!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(event){
+
+        img.onload = function(){
+
+            document.getElementById("info").innerHTML =
+            "Image Size: " + img.width + " × " + img.height + " px";
+
+        };
+
+        img.src = event.target.result;
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+function convertImage(){
+
+    if(!img.src){
+        alert("Please select a JPG image first.");
+        return;
+    }
+
+    const canvas = document.getElementById("canvas");
+
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.drawImage(img,0,0);
+
+    const png = canvas.toDataURL("image/png");
+
+    const download = document.getElementById("download");
+
+    download.href = png;
+    download.style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
