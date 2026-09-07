@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resize Image Online Free | Image Resizer</title>
+
+<meta name="description" content="Resize JPG, JPEG and PNG images online for free. Easy, fast and mobile-friendly image resizer.">
+<meta name="keywords" content="resize image online, image resizer, resize jpg, resize png, photo resizer, resize image free">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+.container{
+    max-width:650px;
+    margin:30px auto;
+    padding:20px;
+}
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    text-align:center;
+}
+h1{
+    margin-top:0;
+}
+input,button{
+    width:100%;
+    padding:13px;
+    margin:8px 0;
+    box-sizing:border-box;
+    border-radius:10px;
+}
+input{
+    border:1px solid #ccc;
+}
+button{
+    border:0;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+canvas{
+    max-width:100%;
+    margin:15px 0;
+    border-radius:10px;
+}
+.info{
+    margin:15px 0;
+    font-size:14px;
+}
+a{
+    color:#111;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Resize Image Online Free</h1>
+
+<p>Resize your JPG, JPEG or PNG image quickly and easily.</p>
+
+<input type="file" id="upload" accept="image/jpeg,image/png">
+
+<div id="original" class="info"></div>
+
+<input type="number" id="width" placeholder="Enter width (px)">
+<input type="number" id="height" placeholder="Enter height (px)">
+
+<button onclick="resizeImage()">Resize Image</button>
+
+<canvas id="canvas"></canvas>
+
+<div id="result" class="info"></div>
+
+<a id="download" style="display:none" download="resized-image.jpg">
+<button>Download Resized Image</button>
+</a>
+
+</div>
+
+</div>
+
+<script>
+let img = new Image();
+
+document.getElementById("upload").addEventListener("change", function(e){
+
+    const file = e.target.files[0];
+
+    if(!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(event){
+
+        img.onload = function(){
+
+            document.getElementById("width").value = img.width;
+            document.getElementById("height").value = img.height;
+
+            document.getElementById("original").innerHTML =
+            "Original Size: " + img.width + " × " + img.height + " px";
+
+        };
+
+        img.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+});
+
+function resizeImage(){
+
+    if(!img.src){
+        alert("Please select an image first.");
+        return;
+    }
+
+    const width = parseInt(document.getElementById("width").value);
+    const height = parseInt(document.getElementById("height").value);
+
+    if(!width || !height){
+        alert("Please enter width and height.");
+        return;
+    }
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = width;
+    canvas.height = height;
+
+    ctx.drawImage(img,0,0,width,height);
+
+    const dataURL = canvas.toDataURL("image/jpeg",0.9);
+
+    document.getElementById("download").href = dataURL;
+    document.getElementById("download").style.display = "block";
+
+    document.getElementById("result").innerHTML =
+    "New Size: " + width + " × " + height + " px";
+}
+</script>
+
+</body>
+</html>
