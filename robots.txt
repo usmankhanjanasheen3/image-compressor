@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usmankhanjanasheen3.github.io/image-compressor/sitemap.xml
