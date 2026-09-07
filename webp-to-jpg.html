@@ -4,231 +4,509 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WebP to JPG Converter Online Free</title>
+<meta name="google-site-verification" content="zsi5z9v4g6J0hdl5foGJGlbAm0XEmT1pcLYFhP-PIjw">
 
-<meta name="description" content="Convert WebP images to JPG online for free. Fast, simple and mobile-friendly WebP to JPG converter.">
+<title>WebP to JPG Converter Online | Free ImageTools</title>
 
-<meta name="keywords" content="webp to jpg, webp to jpg converter, convert webp to jpg, webp converter online, image converter">
+<meta name="description" content="Convert WebP images to JPG online for free. Fast, simple and mobile-friendly WebP to JPG converter with preview and download.">
+<meta name="keywords" content="webp to jpg, webp to jpeg, convert webp to jpg, webp converter, image converter online">
 
 <style>
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f7fb;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f6f8;
     color:#222;
+    line-height:1.6;
 }
 
-nav{
+header{
     background:#111;
-    padding:15px 10px;
-    text-align:center;
+    color:white;
+    padding:16px 20px;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-nav a{
+.nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
     color:white;
     text-decoration:none;
-    margin:0 7px;
     font-size:14px;
 }
 
-.container{
+.nav-links a:hover{
+    text-decoration:underline;
+}
+
+.hero{
+    text-align:center;
+    padding:55px 20px 30px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#666;
     max-width:700px;
-    margin:30px auto;
-    padding:15px;
+    margin:auto;
+}
+
+.container{
+    max-width:900px;
+    margin:20px auto 50px;
+    padding:0 15px;
 }
 
 .card{
     background:white;
-    padding:25px;
     border-radius:18px;
-    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    padding:30px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
     text-align:center;
 }
 
-h1{
-    margin-top:0;
+.upload-box{
+    border:2px dashed #bbb;
+    border-radius:14px;
+    padding:35px 20px;
+    margin-bottom:25px;
 }
 
-.subtitle{
-    color:#666;
-    line-height:1.6;
+.upload-box p{
+    color:#777;
+    margin-bottom:15px;
 }
 
 input[type="file"]{
     width:100%;
+    max-width:400px;
     padding:12px;
     border:1px solid #ddd;
-    border-radius:10px;
-    margin:15px 0;
+    border-radius:8px;
+    background:#fafafa;
 }
 
-canvas{
+.preview{
+    display:none;
+    margin:25px 0;
+}
+
+.preview img{
     max-width:100%;
-    margin:15px 0;
-    border-radius:10px;
-    display:none;
-}
-
-button{
-    width:100%;
-    padding:13px;
-    margin-top:15px;
-    border:0;
-    border-radius:10px;
-    background:#111;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-.download{
-    display:none;
-    text-decoration:none;
+    max-height:400px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
 }
 
 .info{
-    margin:10px 0;
+    display:none;
+    background:#f1f1f1;
+    padding:12px;
+    border-radius:10px;
+    margin:15px 0;
     font-size:14px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+button{
+    border:0;
+    padding:13px 25px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.convert{
+    background:#111;
+    color:white;
+}
+
+.download{
+    background:#198754;
+    color:white;
+    display:none;
+}
+
+.reset{
+    background:#e9ecef;
+    color:#222;
+    display:none;
+}
+
+button:hover{
+    opacity:.88;
 }
 
 .content{
     max-width:900px;
-    margin:30px auto;
-    padding:20px;
-    line-height:1.7;
+    margin:30px auto 60px;
+    padding:0 20px;
+}
+
+.content-section{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 4px 18px rgba(0,0,0,.05);
+}
+
+.content-section h2{
+    margin-bottom:12px;
+    font-size:24px;
+}
+
+.content-section p{
+    color:#555;
+    margin-bottom:10px;
+}
+
+.faq{
+    margin-top:15px;
+}
+
+.faq h3{
+    font-size:17px;
+    margin-top:15px;
+    margin-bottom:5px;
 }
 
 footer{
     background:#111;
-    color:white;
+    color:#aaa;
     text-align:center;
-    padding:20px;
-    margin-top:40px;
+    padding:25px 15px;
+    font-size:14px;
 }
 
 footer a{
     color:white;
+    text-decoration:none;
     margin:0 7px;
+}
+
+@media(max-width:600px){
+
+    .nav{
+        flex-direction:column;
+    }
+
+    .nav-links{
+        justify-content:center;
+        gap:12px;
+    }
+
+    .hero{
+        padding-top:40px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .card{
+        padding:20px 15px;
+    }
+
+    .upload-box{
+        padding:25px 12px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="resize-image.html">Resizer</a>
-<a href="jpg-to-png.html">JPG to PNG</a>
-<a href="png-to-jpg.html">PNG to JPG</a>
-</nav>
+<header>
+    <div class="nav">
+        <div class="logo">ImageTools</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>WebP to JPG Converter</h1>
+
+    <p>
+        Convert WebP images to JPG format online for free.
+        Fast, simple and mobile-friendly.
+    </p>
+</section>
 
 <div class="container">
 
-<div class="card">
+    <div class="card">
 
-<h1>WebP to JPG Converter</h1>
+        <div class="upload-box">
 
-<p class="subtitle">
-Convert WebP images to JPG format online for free.
-</p>
+            <p><strong>Select a WebP image</strong></p>
 
-<input type="file" id="upload" accept="image/webp">
+            <p>
+                Upload your WebP file and convert it to JPG instantly.
+            </p>
 
-<div id="info" class="info"></div>
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/webp"
+            >
 
-<canvas id="canvas"></canvas>
+        </div>
 
-<button onclick="convertImage()">
-Convert WebP to JPG
-</button>
+        <div class="preview" id="preview">
 
-<a id="download" class="download" download="converted-image.jpg">
-<button>Download JPG Image</button>
-</a>
+            <h3>Image Preview</h3>
+
+            <br>
+
+            <img
+                id="previewImage"
+                alt="WebP image preview"
+            >
+
+        </div>
+
+        <div class="info" id="info"></div>
+
+        <div class="buttons">
+
+            <button
+                class="convert"
+                id="convertBtn"
+            >
+                Convert to JPG
+            </button>
+
+            <button
+                class="download"
+                id="downloadBtn"
+            >
+                Download JPG
+            </button>
+
+            <button
+                class="reset"
+                id="resetBtn"
+            >
+                Convert Another
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
-</div>
 
-<div class="content">
+<section class="content">
 
-<h2>Convert WebP to JPG Online</h2>
+    <div class="content-section">
 
-<p>
-Convert your WebP images to JPG format directly in your browser. No software or app installation is required.
-</p>
+        <h2>Free WebP to JPG Converter Online</h2>
 
-<h2>How to Convert WebP to JPG</h2>
+        <p>
+            ImageTools provides a simple and free WebP to JPG converter
+            that works directly in your web browser.
+        </p>
 
-<p>
-Select a WebP image from your phone or computer and click the Convert WebP to JPG button. Your converted JPG image can then be downloaded.
-</p>
+        <p>
+            Convert WebP images to JPG without installing software or
+            using complicated editing programs.
+        </p>
 
-<h2>Why Convert WebP to JPG?</h2>
+    </div>
 
-<p>
-JPG is widely supported by many apps, websites and devices. Converting WebP to JPG can make an image easier to use in places that do not support WebP.
-</p>
+    <div class="content-section">
 
-<h2>Is This Converter Free?</h2>
+        <h2>How to Convert WebP to JPG</h2>
 
-<p>
-Yes. This WebP to JPG converter is free and works on smartphones, tablets and computers.
-</p>
+        <p>1. Select your WebP image.</p>
 
-</div>
+        <p>2. Preview your uploaded image.</p>
+
+        <p>3. Click the "Convert to JPG" button.</p>
+
+        <p>4. Click "Download JPG" to save your converted image.</p>
+
+    </div>
+
+    <div class="content-section">
+
+        <h2>Why Use Our WebP to JPG Converter?</h2>
+
+        <p>✓ Free to use</p>
+
+        <p>✓ No software installation required</p>
+
+        <p>✓ Works on mobile phones</p>
+
+        <p>✓ Works on computers and tablets</p>
+
+        <p>✓ Fast image conversion</p>
+
+        <p>✓ Simple and easy interface</p>
+
+        <p>✓ Conversion happens directly in your browser</p>
+
+    </div>
+
+    <div class="content-section">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+
+            <h3>Is WebP to JPG conversion free?</h3>
+
+            <p>
+                Yes. You can use our WebP to JPG converter completely free.
+            </p>
+
+            <h3>Can I convert WebP to JPG on Android?</h3>
+
+            <p>
+                Yes. The converter works on Android phones, iPhones,
+                tablets and computers.
+            </p>
+
+            <h3>Do I need to install an app?</h3>
+
+            <p>
+                No. You can convert your WebP image directly in your browser.
+            </p>
+
+            <h3>Are my images uploaded to a server?</h3>
+
+            <p>
+                No. The conversion is performed directly in your browser.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 <footer>
 
-<p>© 2026 Free Image Compressor</p>
+    <p>© 2026 ImageTools. All Rights Reserved.</p>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="privacy.html">Privacy</a>
-<a href="contact.html">Contact</a>
+    <br>
+
+    <a href="index.html">Home</a>
+
+    <a href="about.html">About</a>
+
+    <a href="privacy.html">Privacy</a>
+
+    <a href="contact.html">Contact</a>
 
 </footer>
 
 <script>
 
-let img = new Image();
+const fileInput = document.getElementById("fileInput");
+
+const preview = document.getElementById("preview");
+
+const previewImage = document.getElementById("previewImage");
+
+const info = document.getElementById("info");
+
+const convertBtn = document.getElementById("convertBtn");
+
+const downloadBtn = document.getElementById("downloadBtn");
+
+const resetBtn = document.getElementById("resetBtn");
+
 let selectedFile = null;
 
-document.getElementById("upload").addEventListener("change", function(e){
+let convertedImage = null;
 
-    selectedFile = e.target.files[0];
 
-    if(!selectedFile){
+fileInput.addEventListener("change", function(){
+
+    const file = this.files[0];
+
+    if(!file){
         return;
     }
 
+    if(file.type !== "image/webp"){
+        alert("Please select a WebP image.");
+
+        fileInput.value = "";
+
+        return;
+    }
+
+    selectedFile = file;
+
     const reader = new FileReader();
 
-    reader.onload = function(event){
+    reader.onload = function(e){
 
-        img.onload = function(){
+        previewImage.src = e.target.result;
 
-            document.getElementById("info").innerHTML =
-            "WebP Size: " +
-            img.width +
-            " × " +
-            img.height +
-            " px";
+        preview.style.display = "block";
 
-        };
+        info.innerHTML =
+            "Original File: " +
+            file.name +
+            " | Size: " +
+            formatBytes(file.size);
 
-        img.src = event.target.result;
+        info.style.display = "block";
 
     };
 
-    reader.readAsDataURL(selectedFile);
+    reader.readAsDataURL(file);
 
 });
 
-function convertImage(){
+
+convertBtn.addEventListener("click", function(){
 
     if(!selectedFile){
 
@@ -237,28 +515,131 @@ function convertImage(){
         return;
     }
 
-    const canvas = document.getElementById("canvas");
+    const img = new Image();
 
-    canvas.width = img.width;
-    canvas.height = img.height;
+    img.onload = function(){
 
-    const ctx = canvas.getContext("2d");
+        const canvas = document.createElement("canvas");
 
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
+        canvas.width = img.width;
 
-    ctx.drawImage(img,0,0);
+        canvas.height = img.height;
 
-    canvas.style.display = "block";
+        const ctx = canvas.getContext("2d");
 
-    const jpgData =
-    canvas.toDataURL("image/jpeg",0.9);
+        /*
+        JPG does not support transparency,
+        so we use a white background.
+        */
 
-    const download =
-    document.getElementById("download");
+        ctx.fillStyle = "#ffffff";
 
-    download.href = jpgData;
-    download.style.display = "block";
+        ctx.fillRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+        ctx.drawImage(
+            img,
+            0,
+            0
+        );
+
+        convertedImage =
+            canvas.toDataURL(
+                "image/jpeg",
+                0.92
+            );
+
+        downloadBtn.style.display = "inline-block";
+
+        resetBtn.style.display = "inline-block";
+
+        info.innerHTML =
+            "Conversion complete! Your WebP image is now ready as JPG.";
+
+    };
+
+    img.src = URL.createObjectURL(selectedFile);
+
+});
+
+
+downloadBtn.addEventListener("click", function(){
+
+    if(!convertedImage){
+        return;
+    }
+
+    const link = document.createElement("a");
+
+    link.href = convertedImage;
+
+    link.download = "converted-image.jpg";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+});
+
+
+resetBtn.addEventListener("click", function(){
+
+    fileInput.value = "";
+
+    selectedFile = null;
+
+    convertedImage = null;
+
+    preview.style.display = "none";
+
+    info.style.display = "none";
+
+    downloadBtn.style.display = "none";
+
+    resetBtn.style.display = "none";
+
+    previewImage.src = "";
+
+});
+
+
+function formatBytes(bytes){
+
+    if(bytes === 0){
+        return "0 Bytes";
+    }
+
+    const sizes = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
+
+    const i =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+    return (
+        parseFloat(
+            (
+                bytes /
+                Math.pow(1024, i)
+            ).toFixed(2)
+        )
+        +
+        " "
+        +
+        sizes[i]
+    );
 
 }
 
