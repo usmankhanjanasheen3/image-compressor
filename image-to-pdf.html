@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Image to PDF Converter Online Free</title>
+
+<meta name="description" content="Convert JPG and PNG images to PDF online for free. Create a PDF from your image directly in your browser.">
+
+<meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, image to pdf converter, convert image to pdf online">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#222;
+}
+
+nav{
+    background:#111;
+    padding:15px 10px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 6px;
+    font-size:14px;
+}
+
+.container{
+    max-width:700px;
+    margin:30px auto;
+    padding:15px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+h1{
+    margin-top:0;
+}
+
+.subtitle{
+    color:#666;
+    line-height:1.6;
+}
+
+input[type="file"]{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin:15px 0;
+}
+
+.preview{
+    width:100%;
+    max-height:300px;
+    object-fit:contain;
+    margin:15px 0;
+    border-radius:10px;
+    display:none;
+}
+
+button{
+    width:100%;
+    padding:13px;
+    margin-top:15px;
+    border:0;
+    border-radius:10px;
+    background:#111;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:disabled{
+    opacity:.5;
+}
+
+.info{
+    margin:10px 0;
+    font-size:14px;
+}
+
+.content{
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+    line-height:1.7;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+footer a{
+    color:white;
+    margin:0 7px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="resize-image.html">Resizer</a>
+<a href="jpg-to-png.html">JPG to PNG</a>
+<a href="png-to-jpg.html">PNG to JPG</a>
+<a href="webp-to-jpg.html">WebP to JPG</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Image to PDF Converter</h1>
+
+<p class="subtitle">
+Convert JPG and PNG images to PDF online for free.
+</p>
+
+<input type="file" id="upload" accept="image/jpeg,image/png">
+
+<div id="info" class="info"></div>
+
+<img id="preview" class="preview">
+
+<button id="convertButton" onclick="convertToPDF()" disabled>
+Convert Image to PDF
+</button>
+
+<button id="downloadButton" onclick="downloadPDF()" disabled>
+Download PDF
+</button>
+
+</div>
+</div>
+
+
+<div class="content">
+
+<h2>Convert Image to PDF Online</h2>
+
+<p>
+Convert JPG and PNG images into a PDF file directly in your browser. No software or app installation is required.
+</p>
+
+<h2>How to Convert an Image to PDF</h2>
+
+<p>
+Select a JPG or PNG image from your phone or computer and click Convert Image to PDF. When the PDF is created, use the Download PDF button to save it.
+</p>
+
+<h2>Why Use Our Image to PDF Converter?</h2>
+
+<p>
+This tool is simple, fast and mobile-friendly. Your selected image is processed directly in your browser.
+</p>
+
+<h2>Is the Image to PDF Converter Free?</h2>
+
+<p>
+Yes. The converter is free to use and works on smartphones, tablets and computers.
+</p>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 Free Image Compressor</p>
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="privacy.html">Privacy</a>
+<a href="contact.html">Contact</a>
+
+</footer>
+
+
+<script>
+
+let selectedFile = null;
+let imageData = null;
+let imageWidth = 0;
+let imageHeight = 0;
+let pdfBlob = null;
+
+document.getElementById("upload").addEventListener("change", function(e){
+
+    selectedFile = e.target.files[0];
+
+    if(!selectedFile){
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(event){
+
+        imageData = event.target.result;
+
+        const img = new Image();
+
+        img.onload = function(){
+
+            imageWidth = img.width;
+            imageHeight = img.height;
+
+            document.getElementById("info").innerHTML =
+            "Image Size: " +
+            imageWidth +
+            " × " +
+            imageHeight +
+            " px";
+
+            const preview =
+            document.getElementById("preview");
+
+            preview.src = imageData;
+            preview.style.display = "block";
+
+            document.getElementById("convertButton").disabled = false;
+            document.getElementById("downloadButton").disabled = true;
+
+        };
+
+        img.src = imageData;
+
+    };
+
+    reader.readAsDataURL(selectedFile);
+
+});
+
+
+function convertToPDF(){
+
+    if(!imageData){
+        alert("Please select an image first.");
+        return;
+    }
+
+    /*
+    Simple PDF creation directly in the browser.
+    The image is placed on a standard A4 page.
+    */
+
+    const img = new Image();
+
+    img.onload = function(){
+
+        const pageWidth = 595.28;
+        const pageHeight = 841.89;
+        const margin = 30;
+
+        let width = img.width;
+        let height = img.height;
+
+        const maxWidth = pageWidth - margin * 2;
+        const maxHeight = pageHeight - margin * 2;
+
+        const scale = Math.min(
+            maxWidth / width,
+            maxHeight / height,
+            1
+        );
+
+        width *= scale;
+        height *= scale;
+
+        const x = (pageWidth - width) / 2;
+        const y = (pageHeight - height) / 2;
+
+        /*
+        Use browser print-to-PDF through a temporary window.
+        This keeps the conversion local to the browser.
+        */
+
+        const printWindow = window.open("", "_blank");
+
+        if(!printWindow){
+
+            alert("Please allow pop-ups for this website.");
+
+            return;
+        }
+
+        printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Image to PDF</title>
+
+        <style>
+
+        @page{
+            size:A4;
+            margin:0;
+        }
+
+        html,body{
+            margin:0;
+            padding:0;
+            width:210mm;
+            height:297mm;
+        }
+
+        body{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        img{
+            max-width:150mm;
+            max-height:237mm;
+            object-fit:contain;
+        }
+
+        </style>
+
+        </head>
+
+        <body>
+
+        <img src="${imageData}">
+
+        <script>
+
+        window.onload=function(){
+            setTimeout(function(){
+                window.print();
+            },500);
+        };
+
+        <\/script>
+
+        </body>
+        </html>
+        `);
+
+        printWindow.document.close();
+
+        document.getElementById("downloadButton").disabled = false;
+
+    };
+
+    img.src = imageData;
+
+}
+
+
+function downloadPDF(){
+
+    alert(
+        "The PDF print window has opened. Choose 'Save as PDF' and save the file."
+    );
+
+}
+
+</script>
+
+</body>
+</html>
