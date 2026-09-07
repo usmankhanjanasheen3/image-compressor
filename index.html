@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image Compressor</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+}
+
+.upload {
+    display: block;
+    border: 2px dashed #999;
+    padding: 35px 15px;
+    border-radius: 15px;
+    margin: 25px 0;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 8px;
+}
+
+#compressBtn {
+    background: #111;
+    color: white;
+}
+
+#downloadBtn {
+    background: #168a45;
+    color: white;
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🖼️ Free Image Compressor</h1>
+
+<p>Compress your images quickly and easily.</p>
+
+<label class="upload">
+    📁 Tap here to select an image
+    <input type="file" id="imageInput" accept="image/*">
+</label>
+
+<button id="compressBtn">Compress Image</button>
+
+<div id="result"></div>
+
+<img id="preview">
+
+<br>
+
+<button id="downloadBtn">Download Compressed Image</button>
+
+</div>
+
+</div>
+
+<script>
+
+let compressedImage = null;
+
+document.getElementById("compressBtn").addEventListener("click", function() {
+
+    const file = document.getElementById("imageInput").files[0];
+
+    if (!file) {
+        alert("Please select an image first.");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+
+        const img = new Image();
+
+        img.onload = function() {
+
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+
+            let width = img.width;
+            let height = img.height;
+
+            const maxWidth = 1600;
+
+            if (width > maxWidth) {
+                height = height * (maxWidth / width);
+                width = maxWidth;
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+
+            ctx.drawImage(img, 0, 0, width, height);
+
+            compressedImage = canvas.toDataURL("image/jpeg", 0.65);
+
+            document.getElementById("preview").src = compressedImage;
+
+            const originalSize = (file.size / 1024).toFixed(1);
+            const compressedSize =
+                (compressedImage.length * 0.75 / 1024).toFixed(1);
+
+            document.getElementById("result").innerHTML =
+                "Original: " + originalSize + " KB<br>" +
+                "Compressed: " + compressedSize + " KB";
+
+            document.getElementById("downloadBtn").style.display =
+                "inline-block";
+        };
+
+        img.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+document.getElementById("downloadBtn").addEventListener("click", function() {
+
+    if (!compressedImage) return;
+
+    const link = document.createElement("a");
+
+    link.href = compressedImage;
+    link.download = "compressed-image.jpg";
+
+    link.click();
+
+});
+
+</script>
+
+</body>
+</html>
