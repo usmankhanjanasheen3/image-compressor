@@ -4,377 +4,1102 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Image to PDF Converter Online Free</title>
+<meta name="google-site-verification" content="zsi5z9v4g6J0hdl5foGJGlbAm0XEmT1pcLYFhP-PIjw">
 
-<meta name="description" content="Convert JPG and PNG images to PDF online for free. Create a PDF from your image directly in your browser.">
+<title>Image to PDF Converter Online | Free ImageTools</title>
 
-<meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, image to pdf converter, convert image to pdf online">
+<meta name="description" content="Convert JPG, PNG and WebP images to PDF online for free. Combine multiple images into one PDF and download it easily.">
+<meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, convert image to pdf, photo to pdf, image pdf converter">
 
 <style>
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f7fb;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f6f8;
     color:#222;
+    line-height:1.6;
 }
 
-nav{
+header{
     background:#111;
-    padding:15px 10px;
-    text-align:center;
+    color:white;
+    padding:16px 20px;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-nav a{
+.nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
     color:white;
     text-decoration:none;
-    margin:0 6px;
     font-size:14px;
 }
 
-.container{
+.hero{
+    text-align:center;
+    padding:55px 20px 30px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#666;
     max-width:700px;
-    margin:30px auto;
-    padding:15px;
+    margin:auto;
+}
+
+.container{
+    max-width:900px;
+    margin:20px auto 50px;
+    padding:0 15px;
 }
 
 .card{
     background:white;
-    padding:25px;
     border-radius:18px;
-    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    padding:30px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
     text-align:center;
 }
 
-h1{
-    margin-top:0;
+.upload-box{
+    border:2px dashed #bbb;
+    border-radius:14px;
+    padding:35px 20px;
+    margin-bottom:25px;
 }
 
-.subtitle{
-    color:#666;
-    line-height:1.6;
+.upload-box p{
+    color:#777;
+    margin-bottom:15px;
 }
 
 input[type="file"]{
     width:100%;
+    max-width:450px;
     padding:12px;
     border:1px solid #ddd;
-    border-radius:10px;
-    margin:15px 0;
+    border-radius:8px;
+    background:#fafafa;
 }
 
-.preview{
+.image-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:15px;
+    margin:25px 0;
+}
+
+.image-item{
+    background:#f7f7f7;
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:10px;
+}
+
+.image-item img{
     width:100%;
-    max-height:300px;
+    height:130px;
     object-fit:contain;
-    margin:15px 0;
-    border-radius:10px;
-    display:none;
+    border-radius:8px;
+    background:white;
 }
 
-button{
-    width:100%;
-    padding:13px;
-    margin-top:15px;
-    border:0;
-    border-radius:10px;
-    background:#111;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-button:disabled{
-    opacity:.5;
+.image-item p{
+    font-size:12px;
+    color:#666;
+    margin-top:7px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
 }
 
 .info{
-    margin:10px 0;
+    display:none;
+    background:#f1f1f1;
+    padding:12px;
+    border-radius:10px;
+    margin:15px 0;
     font-size:14px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+button{
+    border:0;
+    padding:13px 25px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.convert{
+    background:#111;
+    color:white;
+}
+
+.download{
+    background:#198754;
+    color:white;
+    display:none;
+}
+
+.reset{
+    background:#e9ecef;
+    color:#222;
+    display:none;
+}
+
+button:hover{
+    opacity:.88;
 }
 
 .content{
     max-width:900px;
-    margin:30px auto;
-    padding:20px;
-    line-height:1.7;
+    margin:30px auto 60px;
+    padding:0 20px;
+}
+
+.content-section{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 4px 18px rgba(0,0,0,.05);
+}
+
+.content-section h2{
+    margin-bottom:12px;
+    font-size:24px;
+}
+
+.content-section p{
+    color:#555;
+    margin-bottom:10px;
+}
+
+.faq h3{
+    font-size:17px;
+    margin-top:15px;
+    margin-bottom:5px;
 }
 
 footer{
     background:#111;
-    color:white;
+    color:#aaa;
     text-align:center;
-    padding:20px;
-    margin-top:40px;
+    padding:25px 15px;
+    font-size:14px;
 }
 
 footer a{
     color:white;
+    text-decoration:none;
     margin:0 7px;
+}
+
+@media(max-width:600px){
+
+    .nav{
+        flex-direction:column;
+    }
+
+    .nav-links{
+        justify-content:center;
+        gap:12px;
+    }
+
+    .hero{
+        padding-top:40px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .card{
+        padding:20px 15px;
+    }
+
+    .upload-box{
+        padding:25px 12px;
+    }
+
+    .image-list{
+        grid-template-columns:repeat(2,1fr);
+    }
+
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="resize-image.html">Resizer</a>
-<a href="jpg-to-png.html">JPG to PNG</a>
-<a href="png-to-jpg.html">PNG to JPG</a>
-<a href="webp-to-jpg.html">WebP to JPG</a>
-</nav>
+<header>
+
+    <div class="nav">
+
+        <div class="logo">
+            ImageTools
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Image to PDF Converter</h1>
+
+    <p>
+        Convert JPG, PNG and WebP images to PDF online for free.
+        Combine multiple images into one PDF file.
+    </p>
+
+</section>
+
 
 <div class="container">
 
-<div class="card">
+    <div class="card">
 
-<h1>Image to PDF Converter</h1>
+        <div class="upload-box">
 
-<p class="subtitle">
-Convert JPG and PNG images to PDF online for free.
-</p>
+            <p>
+                <strong>Select your images</strong>
+            </p>
 
-<input type="file" id="upload" accept="image/jpeg,image/png">
+            <p>
+                You can select multiple JPG, PNG or WebP images.
+            </p>
 
-<div id="info" class="info"></div>
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/jpeg,image/png,image/webp"
+                multiple
+            >
 
-<img id="preview" class="preview">
+        </div>
 
-<button id="convertButton" onclick="convertToPDF()" disabled>
-Convert Image to PDF
-</button>
 
-<button id="downloadButton" onclick="downloadPDF()" disabled>
-Download PDF
-</button>
+        <div
+            class="image-list"
+            id="imageList">
+        </div>
+
+
+        <div
+            class="info"
+            id="info">
+        </div>
+
+
+        <div class="buttons">
+
+            <button
+                class="convert"
+                id="convertBtn">
+                Create PDF
+            </button>
+
+            <button
+                class="download"
+                id="downloadBtn">
+                Download PDF
+            </button>
+
+            <button
+                class="reset"
+                id="resetBtn">
+                Convert Another
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
-</div>
 
 
-<div class="content">
+<section class="content">
 
-<h2>Convert Image to PDF Online</h2>
+    <div class="content-section">
 
-<p>
-Convert JPG and PNG images into a PDF file directly in your browser. No software or app installation is required.
-</p>
+        <h2>Free Image to PDF Converter Online</h2>
 
-<h2>How to Convert an Image to PDF</h2>
+        <p>
+            ImageTools lets you convert images into a PDF document
+            directly from your browser. You can select one or multiple
+            images and combine them into a single PDF file.
+        </p>
 
-<p>
-Select a JPG or PNG image from your phone or computer and click Convert Image to PDF. When the PDF is created, use the Download PDF button to save it.
-</p>
+        <p>
+            The tool works on smartphones, tablets and computers
+            without requiring additional software.
+        </p>
 
-<h2>Why Use Our Image to PDF Converter?</h2>
+    </div>
 
-<p>
-This tool is simple, fast and mobile-friendly. Your selected image is processed directly in your browser.
-</p>
 
-<h2>Is the Image to PDF Converter Free?</h2>
+    <div class="content-section">
 
-<p>
-Yes. The converter is free to use and works on smartphones, tablets and computers.
-</p>
+        <h2>How to Convert Images to PDF</h2>
 
-</div>
+        <p>
+            1. Select one or more JPG, PNG or WebP images.
+        </p>
+
+        <p>
+            2. Check the image previews.
+        </p>
+
+        <p>
+            3. Click "Create PDF".
+        </p>
+
+        <p>
+            4. Click "Download PDF" to save your file.
+        </p>
+
+    </div>
+
+
+    <div class="content-section">
+
+        <h2>Why Use Our Image to PDF Converter?</h2>
+
+        <p>✓ Free online image to PDF conversion</p>
+
+        <p>✓ Supports multiple images</p>
+
+        <p>✓ JPG, PNG and WebP support</p>
+
+        <p>✓ Works on Android and iPhone</p>
+
+        <p>✓ No software installation required</p>
+
+        <p>✓ Simple and mobile-friendly interface</p>
+
+        <p>✓ Images are processed directly in your browser</p>
+
+    </div>
+
+
+    <div class="content-section">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+
+            <h3>
+                Can I convert multiple images to one PDF?
+            </h3>
+
+            <p>
+                Yes. Select multiple images and the tool will place
+                them into one PDF document.
+            </p>
+
+
+            <h3>
+                Which image formats are supported?
+            </h3>
+
+            <p>
+                JPG, JPEG, PNG and WebP images are supported.
+            </p>
+
+
+            <h3>
+                Is this image to PDF converter free?
+            </h3>
+
+            <p>
+                Yes. You can use the converter for free.
+            </p>
+
+
+            <h3>
+                Can I use it on my phone?
+            </h3>
+
+            <p>
+                Yes. It works in modern mobile web browsers.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <footer>
 
-<p>© 2026 Free Image Compressor</p>
+    <p>
+        © 2026 ImageTools. All Rights Reserved.
+    </p>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="privacy.html">Privacy</a>
-<a href="contact.html">Contact</a>
+    <br>
+
+    <a href="index.html">Home</a>
+
+    <a href="about.html">About</a>
+
+    <a href="privacy.html">Privacy</a>
+
+    <a href="contact.html">Contact</a>
 
 </footer>
 
 
 <script>
 
-let selectedFile = null;
-let imageData = null;
-let imageWidth = 0;
-let imageHeight = 0;
+/*
+   This converter creates the PDF directly
+   in the browser using a minimal PDF generator.
+*/
+
+const fileInput =
+    document.getElementById("fileInput");
+
+const imageList =
+    document.getElementById("imageList");
+
+const info =
+    document.getElementById("info");
+
+const convertBtn =
+    document.getElementById("convertBtn");
+
+const downloadBtn =
+    document.getElementById("downloadBtn");
+
+const resetBtn =
+    document.getElementById("resetBtn");
+
+let selectedFiles = [];
+
 let pdfBlob = null;
 
-document.getElementById("upload").addEventListener("change", function(e){
 
-    selectedFile = e.target.files[0];
+fileInput.addEventListener("change", function(){
 
-    if(!selectedFile){
+    selectedFiles =
+        Array.from(this.files);
+
+    imageList.innerHTML = "";
+
+    downloadBtn.style.display = "none";
+
+    resetBtn.style.display = "none";
+
+    pdfBlob = null;
+
+
+    if(selectedFiles.length === 0){
+
+        info.style.display = "none";
+
         return;
+
     }
 
-    const reader = new FileReader();
 
-    reader.onload = function(event){
+    selectedFiles.forEach(function(file){
 
-        imageData = event.target.result;
+        const reader =
+            new FileReader();
 
-        const img = new Image();
+        reader.onload = function(e){
 
-        img.onload = function(){
+            const item =
+                document.createElement("div");
 
-            imageWidth = img.width;
-            imageHeight = img.height;
+            item.className =
+                "image-item";
 
-            document.getElementById("info").innerHTML =
-            "Image Size: " +
-            imageWidth +
-            " × " +
-            imageHeight +
-            " px";
+            item.innerHTML = `
+                <img src="${e.target.result}"
+                     alt="Selected image">
 
-            const preview =
-            document.getElementById("preview");
+                <p>${escapeHTML(file.name)}</p>
+            `;
 
-            preview.src = imageData;
-            preview.style.display = "block";
-
-            document.getElementById("convertButton").disabled = false;
-            document.getElementById("downloadButton").disabled = true;
+            imageList.appendChild(item);
 
         };
 
-        img.src = imageData;
+        reader.readAsDataURL(file);
 
-    };
+    });
 
-    reader.readAsDataURL(selectedFile);
+
+    info.innerHTML =
+        selectedFiles.length +
+        " image" +
+        (selectedFiles.length > 1 ? "s" : "") +
+        " selected.";
+
+    info.style.display = "block";
 
 });
 
 
-function convertToPDF(){
+convertBtn.addEventListener("click", async function(){
 
-    if(!imageData){
-        alert("Please select an image first.");
+    if(selectedFiles.length === 0){
+
+        alert("Please select at least one image.");
+
         return;
+
     }
 
-    /*
-    Simple PDF creation directly in the browser.
-    The image is placed on a standard A4 page.
-    */
 
-    const img = new Image();
+    convertBtn.disabled = true;
 
-    img.onload = function(){
+    convertBtn.textContent =
+        "Creating PDF...";
 
-        const pageWidth = 595.28;
-        const pageHeight = 841.89;
-        const margin = 30;
 
-        let width = img.width;
-        let height = img.height;
+    try{
 
-        const maxWidth = pageWidth - margin * 2;
-        const maxHeight = pageHeight - margin * 2;
+        const images = [];
 
-        const scale = Math.min(
-            maxWidth / width,
-            maxHeight / height,
-            1
+        for(const file of selectedFiles){
+
+            const dataURL =
+                await fileToDataURL(file);
+
+            const dimensions =
+                await getImageDimensions(dataURL);
+
+            images.push({
+                dataURL:dataURL,
+                width:dimensions.width,
+                height:dimensions.height
+            });
+
+        }
+
+
+        pdfBlob =
+            createPDF(images);
+
+
+        downloadBtn.style.display =
+            "inline-block";
+
+        resetBtn.style.display =
+            "inline-block";
+
+
+        info.innerHTML =
+            "PDF created successfully! " +
+            images.length +
+            " image" +
+            (images.length > 1 ? "s" : "") +
+            " added.";
+
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Something went wrong while creating the PDF."
         );
 
-        width *= scale;
-        height *= scale;
+    }
 
-        const x = (pageWidth - width) / 2;
-        const y = (pageHeight - height) / 2;
 
-        /*
-        Use browser print-to-PDF through a temporary window.
-        This keeps the conversion local to the browser.
-        */
+    convertBtn.disabled = false;
 
-        const printWindow = window.open("", "_blank");
+    convertBtn.textContent =
+        "Create PDF";
 
-        if(!printWindow){
+});
 
-            alert("Please allow pop-ups for this website.");
 
-            return;
-        }
+downloadBtn.addEventListener("click", function(){
 
-        printWindow.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-        <title>Image to PDF</title>
+    if(!pdfBlob){
 
-        <style>
+        alert("Please create the PDF first.");
 
-        @page{
-            size:A4;
-            margin:0;
-        }
+        return;
 
-        html,body{
-            margin:0;
-            padding:0;
-            width:210mm;
-            height:297mm;
-        }
+    }
 
-        body{
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
 
-        img{
-            max-width:150mm;
-            max-height:237mm;
-            object-fit:contain;
-        }
+    const url =
+        URL.createObjectURL(pdfBlob);
 
-        </style>
+    const link =
+        document.createElement("a");
 
-        </head>
+    link.href = url;
 
-        <body>
+    link.download =
+        "imagetools-converted.pdf";
 
-        <img src="${imageData}">
+    document.body.appendChild(link);
 
-        <script>
+    link.click();
 
-        window.onload=function(){
-            setTimeout(function(){
-                window.print();
-            },500);
-        };
+    document.body.removeChild(link);
 
-        <\/script>
+    setTimeout(function(){
 
-        </body>
-        </html>
-        `);
+        URL.revokeObjectURL(url);
 
-        printWindow.document.close();
+    },1000);
 
-        document.getElementById("downloadButton").disabled = false;
+});
 
-    };
 
-    img.src = imageData;
+resetBtn.addEventListener("click", function(){
+
+    fileInput.value = "";
+
+    selectedFiles = [];
+
+    pdfBlob = null;
+
+    imageList.innerHTML = "";
+
+    info.innerHTML = "";
+
+    info.style.display = "none";
+
+    downloadBtn.style.display = "none";
+
+    resetBtn.style.display = "none";
+
+});
+
+
+function fileToDataURL(file){
+
+    return new Promise(function(resolve,reject){
+
+        const reader =
+            new FileReader();
+
+        reader.onload =
+            function(){
+                resolve(reader.result);
+            };
+
+        reader.onerror =
+            reject;
+
+        reader.readAsDataURL(file);
+
+    });
 
 }
 
 
-function downloadPDF(){
+function getImageDimensions(dataURL){
 
-    alert(
-        "The PDF print window has opened. Choose 'Save as PDF' and save the file."
+    return new Promise(function(resolve,reject){
+
+        const img =
+            new Image();
+
+        img.onload =
+            function(){
+
+                resolve({
+                    width:img.naturalWidth,
+                    height:img.naturalHeight
+                });
+
+            };
+
+        img.onerror =
+            reject;
+
+        img.src = dataURL;
+
+    });
+
+}
+
+
+function createPDF(images){
+
+    /*
+       A4 page:
+       595 x 842 points
+    */
+
+    const pageWidth = 595;
+
+    const pageHeight = 842;
+
+    const objects = [];
+
+    const pages = [];
+
+    const imageObjects = [];
+
+
+    objects.push(
+        "<< /Type /Catalog /Pages 2 0 R >>"
     );
+
+
+    objects.push(
+        "<< /Type /Pages /Kids [] /Count 0 >>"
+    );
+
+
+    let objectNumber = 3;
+
+
+    images.forEach(function(image,index){
+
+        /*
+           Images are converted to JPEG so they
+           can be embedded inside the PDF.
+        */
+
+        const jpegData =
+            dataURLToJPEG(image.dataURL);
+
+        const imageObjectNumber =
+            objectNumber++;
+
+        const contentObjectNumber =
+            objectNumber++;
+
+        const pageObjectNumber =
+            objectNumber++;
+
+
+        const imageBinary =
+            base64ToBinary(
+                jpegData.split(",")[1]
+            );
+
+
+        imageObjects.push({
+            number:imageObjectNumber,
+            binary:imageBinary,
+            width:image.width,
+            height:image.height
+        });
+
+
+        let scale =
+            Math.min(
+                (pageWidth - 40) / image.width,
+                (pageHeight - 40) / image.height
+            );
+
+
+        let drawWidth =
+            image.width * scale;
+
+        let drawHeight =
+            image.height * scale;
+
+
+        let x =
+            (pageWidth - drawWidth) / 2;
+
+        let y =
+            (pageHeight - drawHeight) / 2;
+
+
+        const content =
+            `q
+${drawWidth.toFixed(2)} 0 0 ${drawHeight.toFixed(2)} ${x.toFixed(2)} ${y.toFixed(2)} cm
+/Im${index + 1} Do
+Q`;
+
+
+        objects[contentObjectNumber - 1] =
+            `<< /Length ${content.length} >>
+stream
+${content}
+endstream`;
+
+
+        objects[pageObjectNumber - 1] =
+            `<< /Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 ${pageWidth} ${pageHeight}]
+/Resources <<
+ /XObject <<
+  /Im${index + 1} ${imageObjectNumber} 0 R
+ >>
+>>
+/Contents ${contentObjectNumber} 0 R
+>>`;
+
+
+        pages.push(pageObjectNumber);
+
+    });
+
+
+    imageObjects.forEach(function(obj){
+
+        objects[obj.number - 1] =
+            `<< /Type /XObject
+/Subtype /Image
+/Width ${obj.width}
+/Height ${obj.height}
+/ColorSpace /DeviceRGB
+/BitsPerComponent 8
+/Filter /DCTDecode
+/Length ${obj.binary.length} >>
+stream
+`;
+
+        objects[obj.number - 1] +=
+            binaryToString(obj.binary) +
+            `
+endstream`;
+
+    });
+
+
+    objects[1] =
+        `<< /Type /Pages
+/Kids [${pages.map(n => n + " 0 R").join(" ")}]
+/Count ${pages.length} >>`;
+
+
+    let pdf =
+        "%PDF-1.4\n";
+
+
+    const offsets = [0];
+
+
+    objects.forEach(function(obj,index){
+
+        offsets[index + 1] =
+            pdf.length;
+
+        pdf +=
+            `${index + 1} 0 obj\n`;
+
+        pdf += obj;
+
+        pdf +=
+            "\nendobj\n";
+
+    });
+
+
+    const xref =
+        pdf.length;
+
+
+    pdf +=
+        `xref
+0 ${objects.length + 1}
+0000000000 65535 f 
+`;
+
+
+    for(let i=1;i<=objects.length;i++){
+
+        pdf +=
+            String(
+                offsets[i]
+            ).padStart(10,"0") +
+            " 00000 n \n";
+
+    }
+
+
+    pdf +=
+        `trailer
+<< /Size ${objects.length + 1} /Root 1 0 R >>
+startxref
+${xref}
+%%EOF`;
+
+
+    return new Blob(
+        [pdf],
+        {type:"application/pdf"}
+    );
+
+}
+
+
+function dataURLToJPEG(dataURL){
+
+    const canvas =
+        document.createElement("canvas");
+
+    const img =
+        new Image();
+
+    /*
+       This function uses a temporary
+       canvas to create JPEG data.
+    */
+
+    /*
+       Because image loading is normally
+       already complete here, use the
+       existing image dimensions.
+    */
+
+    img.src = dataURL;
+
+    canvas.width =
+        img.naturalWidth || 1000;
+
+    canvas.height =
+        img.naturalHeight || 1000;
+
+
+    const ctx =
+        canvas.getContext("2d");
+
+
+    ctx.fillStyle =
+        "#ffffff";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    ctx.drawImage(
+        img,
+        0,
+        0
+    );
+
+
+    return canvas.toDataURL(
+        "image/jpeg",
+        0.90
+    );
+
+}
+
+
+function base64ToBinary(base64){
+
+    const binaryString =
+        atob(base64);
+
+    const len =
+        binaryString.length;
+
+    const bytes =
+        new Uint8Array(len);
+
+
+    for(let i=0;i<len;i++){
+
+        bytes[i] =
+            binaryString.charCodeAt(i);
+
+    }
+
+
+    return bytes;
+
+}
+
+
+function binaryToString(bytes){
+
+    let result = "";
+
+    const chunkSize = 8192;
+
+    for(
+        let i=0;
+        i<bytes.length;
+        i+=chunkSize
+    ){
+
+        result +=
+            String.fromCharCode(
+                ...bytes.subarray(
+                    i,
+                    Math.min(
+                        i + chunkSize,
+                        bytes.length
+                    )
+                )
+            );
+
+    }
+
+    return result;
+
+}
+
+
+function escapeHTML(text){
+
+    return text
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
