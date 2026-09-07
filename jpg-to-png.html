@@ -1,151 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JPG to PNG Converter Online Free</title>
+<title>JPG to PNG Converter Online Free | ImageTools</title>
 
 <meta name="description" content="Convert JPG and JPEG images to PNG online for free. Fast, simple and mobile-friendly JPG to PNG converter.">
 
+<meta name="keywords" content="jpg to png, jpg to png converter, convert jpg to png, jpeg to png, jpg converter online">
+
 <style>
+
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    font-family:Arial,sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fb;
-    color:#222;
+    color:#202124;
+}
+
+header{
+    background:#111;
+    padding:18px 15px;
+}
+
+.header-inner{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:18px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.hero{
+    text-align:center;
+    padding:35px 18px 20px;
+}
+
+.hero h1{
+    font-size:32px;
+    margin:0 0 10px;
+}
+
+.hero p{
+    color:#666;
+    line-height:1.6;
 }
 
 .container{
-    max-width:650px;
-    margin:30px auto;
-    padding:20px;
+    max-width:700px;
+    margin:20px auto;
+    padding:0 15px;
 }
 
 .card{
     background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 25px rgba(0,0,0,.08);
-    text-align:center;
+    padding:28px;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
 }
 
-h1{
+.card h2{
+    text-align:center;
     margin-top:0;
 }
 
-input,button{
-    width:100%;
-    padding:13px;
-    margin:10px 0;
-    box-sizing:border-box;
-    border-radius:10px;
+.subtitle{
+    text-align:center;
+    color:#666;
+    line-height:1.6;
 }
 
-input{
-    border:1px solid #ccc;
+.file-box{
+    border:2px dashed #ccc;
+    background:#fafafa;
+    padding:22px 15px;
+    border-radius:15px;
+    margin:22px 0;
+}
+
+input[type="file"]{
+    width:100%;
+}
+
+#preview{
+    max-width:100%;
+    max-height:300px;
+    display:none;
+    margin:15px auto;
+    border-radius:12px;
+}
+
+.info{
+    text-align:center;
+    color:#555;
+    font-size:14px;
+    margin:10px 0;
 }
 
 button{
+    width:100%;
+    padding:14px;
     border:0;
+    border-radius:12px;
     background:#111;
     color:white;
-    cursor:pointer;
     font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
 }
 
-canvas{
-    max-width:100%;
-    margin:15px 0;
+button:hover{
+    opacity:.88;
+}
+
+.secondary{
+    background:white;
+    color:#222;
+    border:1px solid #ddd;
 }
 
 #download{
     display:none;
     text-decoration:none;
 }
+
+#result{
+    text-align:center;
+    margin-top:18px;
+    line-height:1.7;
+}
+
+.content{
+    max-width:900px;
+    margin:45px auto;
+    padding:30px 20px;
+    background:white;
+    border-radius:18px;
+    line-height:1.8;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.content h2{
+    margin-top:28px;
+}
+
+.content h2:first-child{
+    margin-top:0;
+}
+
+.content h3{
+    margin-top:22px;
+}
+
+.content p{
+    color:#444;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:50px;
+}
+
+footer p{
+    color:#ddd;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+    font-size:14px;
+}
+
+@media(max-width:600px){
+
+    .header-inner{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav{
+        gap:12px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .card{
+        padding:22px 17px;
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
+
+
+<header>
+
+<div class="header-inner">
+
+<a href="index.html" class="logo">
+ImageTools
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="resize-image.html">Resizer</a>
+<a href="png-to-jpg.html">PNG to JPG</a>
+<a href="webp-to-jpg.html">WebP to JPG</a>
+<a href="about.html">About</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<h1>JPG to PNG Converter</h1>
+
+<p>
+Convert JPG and JPEG images to PNG format online for free.
+</p>
+
+</section>
+
 
 <div class="container">
 
 <div class="card">
 
-<h1>JPG to PNG Converter</h1>
+<h2>JPG to PNG</h2>
 
-<p>Convert JPG and JPEG images to PNG format online for free.</p>
+<p class="subtitle">
+Convert your JPG image to PNG directly in your browser.
+</p>
 
-<input type="file" id="upload" accept="image/jpeg">
 
-<p id="info"></p>
+<div class="file-box">
 
-<canvas id="canvas"></canvas>
+<input
+type="file"
+id="upload"
+accept="image/jpeg"
+>
 
-<button onclick="convertImage()">Convert to PNG</button>
+</div>
 
-<a id="download" download="converted-image.png">
-    <button>Download PNG Image</button>
+
+<img id="preview">
+
+
+<div id="originalInfo" class="info"></div>
+
+
+<button onclick="convertImage()">
+Convert to PNG
+</button>
+
+
+<div id="result"></div>
+
+
+<a
+id="download"
+download="converted-image.png"
+>
+
+<button>
+Download PNG Image
+</button>
+
 </a>
 
+
+<button
+class="secondary"
+onclick="resetTool()"
+>
+Convert Another Image
+</button>
+
+
 </div>
 
 </div>
+
+
+<section class="content">
+
+<h2>
+Convert JPG to PNG Online
+</h2>
+
+<p>
+Our free JPG to PNG converter allows you to convert JPG and JPEG
+images to PNG format directly in your browser. No software or app
+installation is required.
+</p>
+
+
+<h2>
+How to Convert JPG to PNG
+</h2>
+
+<p>
+Select a JPG or JPEG image from your phone or computer and click
+the Convert to PNG button. After conversion, download your PNG
+image.
+</p>
+
+
+<h2>
+Why Convert JPG to PNG?
+</h2>
+
+<p>
+PNG is useful when you need an image format that supports
+transparent backgrounds and lossless image storage.
+</p>
+
+
+<h2>
+Is JPG to PNG Converter Free?
+</h2>
+
+<p>
+Yes. This JPG to PNG converter is free to use and works on
+smartphones, tablets and computers.
+</p>
+
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+
+<h3>
+Can I convert JPG to PNG on my phone?
+</h3>
+
+<p>
+Yes. The converter works directly in modern mobile web browsers.
+</p>
+
+
+<h3>
+Does it require an app?
+</h3>
+
+<p>
+No. You can convert your image directly from your browser.
+</p>
+
+
+<h3>
+Which files are supported?
+</h3>
+
+<p>
+This tool accepts JPG and JPEG images.
+</p>
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 ImageTools. Free Online Image Tools.
+</p>
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="privacy.html">Privacy</a>
+<a href="contact.html">Contact</a>
+
+</footer>
+
 
 <script>
 
-let img = new Image();
+let selectedFile = null;
 
-document.getElementById("upload").addEventListener("change", function(e){
+const upload =
+document.getElementById("upload");
 
-    const file = e.target.files[0];
+const preview =
+document.getElementById("preview");
 
-    if(!file) return;
 
-    const reader = new FileReader();
+upload.addEventListener("change",function(){
 
-    reader.onload = function(event){
+    const file =
+    upload.files[0];
 
-        img.onload = function(){
+    if(!file){
+        return;
+    }
 
-            document.getElementById("info").innerHTML =
-            "Image Size: " + img.width + " × " + img.height + " px";
+    selectedFile = file;
+
+    const reader =
+    new FileReader();
+
+
+    reader.onload =
+    function(e){
+
+        preview.src =
+        e.target.result;
+
+        preview.style.display =
+        "block";
+
+
+        const img =
+        new Image();
+
+
+        img.onload =
+        function(){
+
+            document.getElementById(
+                "originalInfo"
+            ).innerHTML =
+
+            "Original Size: <strong>" +
+            img.width +
+            " × " +
+            img.height +
+            " px</strong>";
 
         };
 
-        img.src = event.target.result;
+
+        img.src =
+        e.target.result;
 
     };
+
 
     reader.readAsDataURL(file);
 
 });
 
+
 function convertImage(){
 
-    if(!img.src){
-        alert("Please select a JPG image first.");
+    if(!selectedFile){
+
+        alert(
+            "Please select a JPG image first."
+        );
+
         return;
     }
 
-    const canvas = document.getElementById("canvas");
 
-    canvas.width = img.width;
-    canvas.height = img.height;
+    const reader =
+    new FileReader();
 
-    const ctx = canvas.getContext("2d");
 
-    ctx.drawImage(img,0,0);
+    reader.onload =
+    function(e){
 
-    const png = canvas.toDataURL("image/png");
+        const img =
+        new Image();
 
-    const download = document.getElementById("download");
 
-    download.href = png;
-    download.style.display = "block";
+        img.onload =
+        function(){
+
+            const canvas =
+            document.createElement(
+                "canvas"
+            );
+
+
+            canvas.width =
+            img.width;
+
+            canvas.height =
+            img.height;
+
+
+            const ctx =
+            canvas.getContext("2d");
+
+
+            ctx.drawImage(
+                img,
+                0,
+                0
+            );
+
+
+            const pngData =
+            canvas.toDataURL(
+                "image/png"
+            );
+
+
+            const download =
+            document.getElementById(
+                "download"
+            );
+
+
+            download.href =
+            pngData;
+
+
+            download.style.display =
+            "block";
+
+
+            document.getElementById(
+                "result"
+            ).innerHTML =
+
+            "Conversion complete! Your PNG image is ready.";
+
+        };
+
+
+        img.src =
+        e.target.result;
+
+    };
+
+
+    reader.readAsDataURL(
+        selectedFile
+    );
+
+}
+
+
+function resetTool(){
+
+    selectedFile =
+    null;
+
+    upload.value =
+    "";
+
+    preview.src =
+    "";
+
+    preview.style.display =
+    "none";
+
+
+    document.getElementById(
+        "originalInfo"
+    ).innerHTML =
+    "";
+
+
+    document.getElementById(
+        "result"
+    ).innerHTML =
+    "";
+
+
+    document.getElementById(
+        "download"
+    ).style.display =
+    "none";
+
 }
 
 </script>
+
 
 </body>
 </html>
