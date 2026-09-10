@@ -7,7 +7,7 @@
 
   <title>Free Image Compressor Online – Compress Images Easily | ImageTools</title>
 
-  <meta name="description" content="Compress images online for free with ImageTools. Reduce JPG, PNG and WebP image file size while keeping good quality. Fast, simple and mobile friendly.">
+  <meta name="description" content="Compress images online for free with ImageTools. Reduce JPG, PNG and WebP image file size quickly while keeping good quality. Fast, simple and mobile friendly.">
 
   <meta name="robots" content="index, follow">
 
@@ -16,7 +16,7 @@
   <meta name="google-site-verification" content="zsi5z9v4g6J0hdl5foGJGlbAm0XEmT1pcLYFhP-PIjw">
 
   <meta property="og:title" content="Free Image Compressor Online | ImageTools">
-  <meta property="og:description" content="Compress images online for free. Reduce image file size quickly and easily.">
+  <meta property="og:description" content="Compress JPG, PNG and WebP images online for free with ImageTools.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://usmankhanjanasheen3.github.io/image-compressor/">
 
@@ -27,6 +27,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f5f5f5;
@@ -34,9 +38,11 @@
       line-height: 1.6;
     }
 
+    /* HEADER */
+
     header {
       background: #111;
-      color: white;
+      color: #fff;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -55,11 +61,12 @@
     }
 
     .logo {
-      color: white;
+      color: #fff;
       text-decoration: none;
       font-size: 24px;
       font-weight: 800;
       letter-spacing: -.5px;
+      white-space: nowrap;
     }
 
     .logo span {
@@ -68,6 +75,8 @@
 
     nav {
       display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
     }
@@ -80,12 +89,14 @@
     }
 
     nav a:hover {
-      color: white;
+      color: #fff;
     }
+
+    /* HERO */
 
     .hero {
       background: linear-gradient(135deg, #111, #292929);
-      color: white;
+      color: #fff;
       text-align: center;
       padding: 60px 18px 55px;
     }
@@ -103,14 +114,18 @@
       font-size: 17px;
     }
 
+    /* MAIN */
+
     .container {
       max-width: 1100px;
       margin: auto;
       padding: 35px 18px;
     }
 
+    /* COMPRESSOR */
+
     .tool-box {
-      background: white;
+      background: #fff;
       max-width: 700px;
       margin: -30px auto 45px;
       position: relative;
@@ -123,6 +138,7 @@
     .tool-box h2 {
       margin-bottom: 8px;
       font-size: 28px;
+      line-height: 1.25;
     }
 
     .tool-box > p {
@@ -130,13 +146,19 @@
       margin-bottom: 25px;
     }
 
+    /* UPLOAD AREA FIXED */
+
     .upload-area {
+      display: block;
+      width: 100%;
+      min-height: 150px;
       border: 2px dashed #aaa;
       border-radius: 14px;
       padding: 35px 20px;
       cursor: pointer;
       background: #fafafa;
       transition: .2s;
+      text-align: center;
     }
 
     .upload-area:hover {
@@ -144,10 +166,17 @@
       background: #f2f2f2;
     }
 
+    .upload-icon {
+      font-size: 38px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .upload-area strong {
       display: block;
       font-size: 18px;
       margin-bottom: 5px;
+      color: #222;
     }
 
     .upload-area span {
@@ -165,6 +194,7 @@
       margin: 25px auto 10px;
       display: none;
       border-radius: 10px;
+      object-fit: contain;
     }
 
     .info {
@@ -174,6 +204,7 @@
       background: #f1f1f1;
       border-radius: 10px;
       font-size: 14px;
+      word-break: break-word;
     }
 
     .controls {
@@ -195,7 +226,7 @@
 
     .compress-btn {
       background: #111;
-      color: white;
+      color: #fff;
     }
 
     .reset-btn {
@@ -211,17 +242,30 @@
       display: none;
       margin-top: 15px;
       background: #111;
-      color: white;
+      color: #fff;
       text-decoration: none;
       padding: 13px 22px;
       border-radius: 9px;
       font-weight: 700;
     }
 
+    #downloadLink:hover {
+      opacity: .85;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #777;
+      margin-top: 14px;
+    }
+
+    /* TOOLS */
+
     .section-title {
       text-align: center;
       font-size: 32px;
       margin-bottom: 25px;
+      line-height: 1.25;
     }
 
     .tools-grid {
@@ -231,7 +275,7 @@
     }
 
     .tool-card {
-      background: white;
+      background: #fff;
       border-radius: 14px;
       padding: 25px;
       text-decoration: none;
@@ -239,6 +283,7 @@
       box-shadow: 0 3px 15px rgba(0,0,0,.07);
       border: 1px solid #eee;
       transition: transform .2s, box-shadow .2s;
+      display: block;
     }
 
     .tool-card:hover {
@@ -261,10 +306,12 @@
       font-size: 14px;
     }
 
+    /* SEO CONTENT */
+
     .content {
       max-width: 850px;
       margin: 55px auto 10px;
-      background: white;
+      background: #fff;
       border-radius: 16px;
       padding: 30px;
     }
@@ -272,6 +319,7 @@
     .content h2 {
       margin: 25px 0 10px;
       font-size: 25px;
+      line-height: 1.3;
     }
 
     .content h2:first-child {
@@ -283,18 +331,21 @@
       margin-bottom: 14px;
     }
 
+    /* FAQ */
+
     .faq {
       max-width: 850px;
-      margin: 25px auto;
+      margin: 35px auto;
     }
 
     .faq h2 {
       text-align: center;
       margin-bottom: 20px;
+      font-size: 28px;
     }
 
     details {
-      background: white;
+      background: #fff;
       margin-bottom: 10px;
       border-radius: 10px;
       padding: 15px 18px;
@@ -311,6 +362,8 @@
       margin-top: 10px;
     }
 
+    /* FOOTER */
+
     footer {
       background: #111;
       color: #aaa;
@@ -325,46 +378,112 @@
       margin: 0 8px;
     }
 
-    .note {
-      font-size: 13px;
-      color: #777;
-      margin-top: 12px;
+    footer a:hover {
+      color: #fff;
     }
 
+    /* MOBILE */
+
     @media (max-width: 750px) {
+
       .nav {
+        min-height: auto;
         flex-direction: column;
-        padding: 15px 12px;
+        padding: 14px 12px;
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 22px;
       }
 
       nav {
-        justify-content: center;
-        gap: 12px;
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 13px;
       }
 
       .hero {
         padding: 45px 15px;
       }
 
+      .hero h1 {
+        font-size: 34px;
+      }
+
       .hero p {
         font-size: 15px;
       }
 
+      .container {
+        padding: 25px 12px;
+      }
+
       .tool-box {
-        margin-top: -20px;
-        padding: 22px 15px;
+        margin-top: -15px;
+        padding: 24px 15px;
+        border-radius: 16px;
+      }
+
+      .tool-box h2 {
+        font-size: 25px;
+      }
+
+      .upload-area {
+        min-height: 145px;
+        padding: 30px 15px;
       }
 
       .tools-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .tool-card {
+        padding: 21px;
       }
 
       .content {
-        padding: 22px 18px;
+        margin-top: 40px;
+        padding: 24px 18px;
+      }
+
+      .content h2 {
+        font-size: 23px;
       }
 
       .section-title {
         font-size: 27px;
+      }
+
+      .faq h2 {
+        font-size: 25px;
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .upload-area {
+        min-height: 135px;
+      }
+
+      button,
+      #downloadLink {
+        width: 100%;
       }
     }
   </style>
@@ -374,7 +493,10 @@
 
 <header>
   <div class="nav">
-    <a class="logo" href="index.html">Image<span>Tools</span></a>
+
+    <a class="logo" href="index.html">
+      Image<span>Tools</span>
+    </a>
 
     <nav>
       <a href="index.html">Home</a>
@@ -382,20 +504,30 @@
       <a href="privacy.html">Privacy</a>
       <a href="contact.html">Contact</a>
     </nav>
+
   </div>
 </header>
 
+
 <section class="hero">
+
   <h1>Free Image Tools Online</h1>
+
   <p>
     Compress, resize and convert your images quickly with simple,
     free and easy-to-use online image tools.
   </p>
+
 </section>
+
 
 <main class="container">
 
+
+  <!-- IMAGE COMPRESSOR -->
+
   <section class="tool-box">
+
     <h2>Image Compressor</h2>
 
     <p>
@@ -403,10 +535,19 @@
       No software installation required.
     </p>
 
+
     <label class="upload-area" for="imageInput">
-      <strong>📁 Choose an Image</strong>
-      <span>JPG, JPEG, PNG or WebP</span>
+
+      <span class="upload-icon">📁</span>
+
+      <strong>Choose an Image</strong>
+
+      <span>
+        JPG, JPEG, PNG or WebP
+      </span>
+
     </label>
+
 
     <input
       type="file"
@@ -414,84 +555,173 @@
       accept="image/jpeg,image/png,image/webp"
     >
 
-    <img id="preview" alt="Image preview">
+
+    <img
+      id="preview"
+      alt="Selected image preview"
+    >
+
 
     <div class="info" id="info"></div>
 
+
     <div class="controls" id="controls">
-      <button class="compress-btn" id="compressBtn">
+
+      <button
+        class="compress-btn"
+        id="compressBtn"
+        type="button"
+      >
         Compress Image
       </button>
 
-      <button class="reset-btn" id="resetBtn">
+
+      <button
+        class="reset-btn"
+        id="resetBtn"
+        type="button"
+      >
         Reset
       </button>
+
     </div>
 
-    <a id="downloadLink" download="compressed-image.jpg">
+
+    <a
+      id="downloadLink"
+      download="compressed-image.jpg"
+    >
       Download Compressed Image
     </a>
+
 
     <div class="note">
       Your image is processed directly in your browser.
     </div>
+
   </section>
 
+
+
+  <!-- POPULAR TOOLS -->
+
   <section>
-    <h2 class="section-title">Popular Image Tools</h2>
+
+    <h2 class="section-title">
+      Popular Image Tools
+    </h2>
+
 
     <div class="tools-grid">
 
-      <a class="tool-card" href="resize-image.html">
+
+      <a
+        class="tool-card"
+        href="resize-image.html"
+      >
+
         <div class="tool-icon">📐</div>
+
         <h3>Image Resizer</h3>
+
         <p>
           Resize JPG and PNG images to your desired dimensions online.
         </p>
+
       </a>
 
-      <a class="tool-card" href="jpg-to-png.html">
+
+
+      <a
+        class="tool-card"
+        href="jpg-to-png.html"
+      >
+
         <div class="tool-icon">🔄</div>
+
         <h3>JPG to PNG</h3>
+
         <p>
           Convert JPG and JPEG images to PNG format quickly.
         </p>
+
       </a>
 
-      <a class="tool-card" href="png-to-jpg.html">
+
+
+      <a
+        class="tool-card"
+        href="png-to-jpg.html"
+      >
+
         <div class="tool-icon">🔄</div>
+
         <h3>PNG to JPG</h3>
+
         <p>
           Convert PNG images to JPG format with a simple online tool.
         </p>
+
       </a>
 
-      <a class="tool-card" href="webp-to-jpg.html">
+
+
+      <a
+        class="tool-card"
+        href="webp-to-jpg.html"
+      >
+
         <div class="tool-icon">🖼️</div>
+
         <h3>WebP to JPG</h3>
+
         <p>
           Convert WebP images to JPG format directly in your browser.
         </p>
+
       </a>
 
-      <a class="tool-card" href="image-to-pdf.html">
+
+
+      <a
+        class="tool-card"
+        href="image-to-pdf.html"
+      >
+
         <div class="tool-icon">📄</div>
+
         <h3>Image to PDF</h3>
+
         <p>
           Convert multiple JPG, PNG or WebP images into a PDF file.
         </p>
+
       </a>
 
-      <a class="tool-card" href="index.html">
+
+
+      <a
+        class="tool-card"
+        href="index.html"
+      >
+
         <div class="tool-icon">📦</div>
+
         <h3>Image Compressor</h3>
+
         <p>
           Compress your images and reduce their file size online.
         </p>
+
       </a>
 
     </div>
+
   </section>
+
+
+
+  <!-- SEO CONTENT -->
 
   <section class="content">
 
@@ -503,6 +733,7 @@
       installing additional software.
     </p>
 
+
     <h2>Why Compress Images?</h2>
 
     <p>
@@ -511,6 +742,7 @@
       sharing and uploading images easier.
     </p>
 
+
     <h2>More Free Image Tools</h2>
 
     <p>
@@ -518,6 +750,7 @@
       between popular image formats. Use the tools above to choose the
       function you need.
     </p>
+
 
     <h2>Private Browser-Based Processing</h2>
 
@@ -529,120 +762,236 @@
 
   </section>
 
+
+
+  <!-- FAQ -->
+
   <section class="faq">
 
-    <h2>Frequently Asked Questions</h2>
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
 
     <details>
-      <summary>Is ImageTools image compressor free?</summary>
+
+      <summary>
+        Is ImageTools image compressor free?
+      </summary>
+
       <p>
         Yes. The image compressor is free to use online.
       </p>
+
     </details>
 
+
     <details>
-      <summary>Which image formats are supported?</summary>
+
+      <summary>
+        Which image formats are supported?
+      </summary>
+
       <p>
         JPG, JPEG, PNG and WebP images are supported.
       </p>
+
     </details>
 
+
     <details>
-      <summary>Do I need to install software?</summary>
+
+      <summary>
+        Do I need to install software?
+      </summary>
+
       <p>
         No. ImageTools works directly in your web browser.
       </p>
+
     </details>
 
+
     <details>
-      <summary>Are my images uploaded to a server?</summary>
+
+      <summary>
+        Are my images uploaded to a server?
+      </summary>
+
       <p>
-        The compressor processes the selected image directly in your
-        browser.
+        The compressor processes the selected image directly in your browser.
       </p>
+
     </details>
 
+
     <details>
-      <summary>Can I use ImageTools on my phone?</summary>
+
+      <summary>
+        Can I use ImageTools on my phone?
+      </summary>
+
       <p>
         Yes. The website is designed to work on smartphones, tablets
         and desktop computers.
       </p>
+
     </details>
 
   </section>
 
 </main>
 
+
+
+<!-- FOOTER -->
+
 <footer>
-  <p>© 2026 ImageTools. All rights reserved.</p>
+
+  <p>
+    © 2026 ImageTools. All rights reserved.
+  </p>
 
   <p style="margin-top:10px;">
+
     <a href="index.html">Home</a>
+
     <a href="about.html">About</a>
+
     <a href="privacy.html">Privacy</a>
+
     <a href="contact.html">Contact</a>
+
   </p>
+
 </footer>
 
+
+
 <script>
-  const imageInput = document.getElementById("imageInput");
-  const preview = document.getElementById("preview");
-  const info = document.getElementById("info");
-  const controls = document.getElementById("controls");
-  const compressBtn = document.getElementById("compressBtn");
-  const resetBtn = document.getElementById("resetBtn");
-  const downloadLink = document.getElementById("downloadLink");
+
+  const imageInput =
+    document.getElementById("imageInput");
+
+  const preview =
+    document.getElementById("preview");
+
+  const info =
+    document.getElementById("info");
+
+  const controls =
+    document.getElementById("controls");
+
+  const compressBtn =
+    document.getElementById("compressBtn");
+
+  const resetBtn =
+    document.getElementById("resetBtn");
+
+  const downloadLink =
+    document.getElementById("downloadLink");
+
 
   let selectedFile = null;
+
   let originalUrl = null;
+
   let compressedUrl = null;
+
+
+
+  /* SELECT IMAGE */
 
   imageInput.addEventListener("change", function () {
 
     const file = this.files[0];
 
-    if (!file) return;
+    if (!file) {
+      return;
+    }
+
+
+    if (!file.type.startsWith("image/")) {
+
+      alert("Please select a valid image file.");
+
+      this.value = "";
+
+      return;
+    }
+
 
     selectedFile = file;
+
 
     if (originalUrl) {
       URL.revokeObjectURL(originalUrl);
     }
 
-    originalUrl = URL.createObjectURL(file);
+
+    originalUrl =
+      URL.createObjectURL(file);
+
 
     preview.src = originalUrl;
+
     preview.style.display = "block";
 
-    const sizeKB = (file.size / 1024).toFixed(1);
+
+    const sizeKB =
+      (file.size / 1024).toFixed(1);
+
 
     info.innerHTML =
       "<strong>Selected:</strong> " +
       file.name +
-      "<br><strong>Original Size:</strong> " +
+      "<br>" +
+      "<strong>Original Size:</strong> " +
       sizeKB +
       " KB";
 
+
     info.style.display = "block";
+
     controls.style.display = "flex";
+
     downloadLink.style.display = "none";
+
   });
+
+
+
+  /* COMPRESS */
 
   compressBtn.addEventListener("click", function () {
 
-    if (!selectedFile) return;
+    if (!selectedFile) {
+
+      alert("Please choose an image first.");
+
+      return;
+    }
+
 
     const img = new Image();
 
+
     img.onload = function () {
 
-      const canvas = document.createElement("canvas");
+      const canvas =
+        document.createElement("canvas");
 
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
 
-      const ctx = canvas.getContext("2d");
+      canvas.width =
+        img.naturalWidth;
+
+      canvas.height =
+        img.naturalHeight;
+
+
+      const ctx =
+        canvas.getContext("2d");
+
 
       ctx.drawImage(
         img,
@@ -652,53 +1001,109 @@
         canvas.height
       );
 
+
       canvas.toBlob(
+
         function (blob) {
 
           if (!blob) {
-            alert("Compression failed. Please try another image.");
+
+            alert(
+              "Compression failed. Please try another image."
+            );
+
             return;
           }
 
+
           if (compressedUrl) {
+
             URL.revokeObjectURL(compressedUrl);
+
           }
 
-          compressedUrl = URL.createObjectURL(blob);
 
-          downloadLink.href = compressedUrl;
-          downloadLink.style.display = "inline-block";
+          compressedUrl =
+            URL.createObjectURL(blob);
+
+
+          downloadLink.href =
+            compressedUrl;
+
+
+          downloadLink.style.display =
+            "inline-block";
+
 
           const originalKB =
             selectedFile.size / 1024;
 
+
           const compressedKB =
             blob.size / 1024;
 
-          const reduction =
-            originalKB > 0
-              ? ((1 - compressedKB / originalKB) * 100).toFixed(1)
-              : 0;
+
+          let reduction =
+            0;
+
+
+          if (originalKB > 0) {
+
+            reduction =
+              (
+                (1 - compressedKB / originalKB) *
+                100
+              ).toFixed(1);
+
+          }
+
+
+          if (reduction < 0) {
+            reduction = 0;
+          }
+
 
           info.innerHTML =
             "<strong>Original:</strong> " +
             originalKB.toFixed(1) +
             " KB<br>" +
+
             "<strong>Compressed:</strong> " +
             compressedKB.toFixed(1) +
             " KB<br>" +
+
             "<strong>Size Reduced:</strong> " +
             reduction +
             "%";
 
         },
+
         "image/jpeg",
+
         0.75
+
       );
+
     };
 
-    img.src = URL.createObjectURL(selectedFile);
+
+    img.onerror = function () {
+
+      alert(
+        "Could not read this image. Please try another file."
+      );
+
+    };
+
+
+    img.src =
+      URL.createObjectURL(selectedFile);
+
   });
+
+
+
+  /* RESET */
 
   resetBtn.addEventListener("click", function () {
 
@@ -706,21 +1111,45 @@
 
     selectedFile = null;
 
-    preview.style.display = "none";
-    info.style.display = "none";
-    controls.style.display = "none";
-    downloadLink.style.display = "none";
+
+    preview.style.display =
+      "none";
+
+
+    preview.removeAttribute("src");
+
+
+    info.style.display =
+      "none";
+
+
+    controls.style.display =
+      "none";
+
+
+    downloadLink.style.display =
+      "none";
+
 
     if (originalUrl) {
+
       URL.revokeObjectURL(originalUrl);
+
       originalUrl = null;
+
     }
 
+
     if (compressedUrl) {
+
       URL.revokeObjectURL(compressedUrl);
+
       compressedUrl = null;
+
     }
+
   });
+
 </script>
 
 </body>
