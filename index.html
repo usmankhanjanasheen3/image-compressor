@@ -7,7 +7,7 @@
 
   <title>Free Image Compressor Online – Compress Images Easily | ImageTools</title>
 
-  <meta name="description" content="Compress images online for free with ImageTools. Reduce JPG, PNG and WebP image file size quickly while keeping good quality. Fast, simple and mobile friendly.">
+  <meta name="description" content="Compress JPG, JPEG, PNG and WebP images online for free with ImageTools. Reduce image file size quickly with our simple, fast and mobile-friendly image compressor.">
 
   <meta name="robots" content="index, follow">
 
@@ -16,9 +16,64 @@
   <meta name="google-site-verification" content="zsi5z9v4g6J0hdl5foGJGlbAm0XEmT1pcLYFhP-PIjw">
 
   <meta property="og:title" content="Free Image Compressor Online | ImageTools">
-  <meta property="og:description" content="Compress JPG, PNG and WebP images online for free with ImageTools.">
+
+  <meta property="og:description" content="Compress JPG, JPEG, PNG and WebP images online for free with ImageTools.">
+
   <meta property="og:type" content="website">
+
   <meta property="og:url" content="https://usmankhanjanasheen3.github.io/image-compressor/">
+
+  <meta property="og:site_name" content="ImageTools">
+
+  <!-- FAQ STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is ImageTools image compressor free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ImageTools provides a free online image compressor that can be used directly in your web browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which image formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The image compressor supports JPG, JPEG, PNG and WebP images."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to install software?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. ImageTools works directly in your web browser without requiring software installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my images uploaded to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The image compressor processes the selected image directly in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use ImageTools on my phone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ImageTools is designed to work on smartphones, tablets and desktop computers."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
     * {
@@ -108,7 +163,7 @@
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
       color: #d6d6d6;
       font-size: 17px;
@@ -145,8 +200,6 @@
       color: #666;
       margin-bottom: 25px;
     }
-
-    /* UPLOAD AREA FIXED */
 
     .upload-area {
       display: block;
@@ -326,9 +379,23 @@
       margin-top: 0;
     }
 
+    .content h3 {
+      margin: 22px 0 8px;
+      font-size: 20px;
+    }
+
     .content p {
       color: #555;
       margin-bottom: 14px;
+    }
+
+    .content ul {
+      margin: 10px 0 18px 22px;
+      color: #555;
+    }
+
+    .content li {
+      margin-bottom: 7px;
     }
 
     /* FAQ */
@@ -498,7 +565,7 @@
       Image<span>Tools</span>
     </a>
 
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy</a>
@@ -523,18 +590,16 @@
 
 <main class="container">
 
-
   <!-- IMAGE COMPRESSOR -->
 
-  <section class="tool-box">
+  <section class="tool-box" aria-labelledby="compressor-title">
 
-    <h2>Image Compressor</h2>
+    <h2 id="compressor-title">Free Image Compressor</h2>
 
     <p>
       Reduce image file size online while keeping good visual quality.
       No software installation required.
     </p>
-
 
     <label class="upload-area" for="imageInput">
 
@@ -548,22 +613,18 @@
 
     </label>
 
-
     <input
       type="file"
       id="imageInput"
       accept="image/jpeg,image/png,image/webp"
     >
 
-
     <img
       id="preview"
       alt="Selected image preview"
     >
 
-
     <div class="info" id="info"></div>
-
 
     <div class="controls" id="controls">
 
@@ -575,7 +636,6 @@
         Compress Image
       </button>
 
-
       <button
         class="reset-btn"
         id="resetBtn"
@@ -586,14 +646,12 @@
 
     </div>
 
-
     <a
       id="downloadLink"
       download="compressed-image.jpg"
     >
       Download Compressed Image
     </a>
-
 
     <div class="note">
       Your image is processed directly in your browser.
@@ -602,18 +660,15 @@
   </section>
 
 
-
   <!-- POPULAR TOOLS -->
 
-  <section>
+  <section aria-labelledby="tools-title">
 
-    <h2 class="section-title">
+    <h2 class="section-title" id="tools-title">
       Popular Image Tools
     </h2>
 
-
     <div class="tools-grid">
-
 
       <a
         class="tool-card"
@@ -625,11 +680,10 @@
         <h3>Image Resizer</h3>
 
         <p>
-          Resize JPG and PNG images to your desired dimensions online.
+          Resize JPG, PNG and WebP images to your desired dimensions online.
         </p>
 
       </a>
-
 
 
       <a
@@ -642,11 +696,10 @@
         <h3>JPG to PNG</h3>
 
         <p>
-          Convert JPG and JPEG images to PNG format quickly.
+          Convert JPG and JPEG images to PNG format quickly and easily.
         </p>
 
       </a>
-
 
 
       <a
@@ -659,11 +712,10 @@
         <h3>PNG to JPG</h3>
 
         <p>
-          Convert PNG images to JPG format with a simple online tool.
+          Convert PNG images to JPG format with a simple online converter.
         </p>
 
       </a>
-
 
 
       <a
@@ -682,7 +734,6 @@
       </a>
 
 
-
       <a
         class="tool-card"
         href="image-to-pdf.html"
@@ -699,7 +750,6 @@
       </a>
 
 
-
       <a
         class="tool-card"
         href="index.html"
@@ -710,7 +760,7 @@
         <h3>Image Compressor</h3>
 
         <p>
-          Compress your images and reduce their file size online.
+          Compress images and reduce their file size online for free.
         </p>
 
       </a>
@@ -720,7 +770,6 @@
   </section>
 
 
-
   <!-- SEO CONTENT -->
 
   <section class="content">
@@ -728,9 +777,15 @@
     <h2>Free Online Image Compressor</h2>
 
     <p>
-      ImageTools provides a simple way to compress images online for free.
-      You can reduce the file size of JPG, JPEG, PNG and WebP images without
-      installing additional software.
+      ImageTools provides a simple and free way to compress images online.
+      You can select JPG, JPEG, PNG or WebP images and reduce their file size
+      directly from your web browser.
+    </p>
+
+    <p>
+      Our image compressor is designed to be easy to use on mobile phones,
+      tablets and desktop computers. No application or software installation
+      is required.
     </p>
 
 
@@ -739,36 +794,50 @@
     <p>
       Large image files can take longer to upload, download and load on
       websites. Compressing images can help reduce file size and make
-      sharing and uploading images easier.
+      uploading, sharing and storing images easier.
     </p>
+
+    <h3>Benefits of Image Compression</h3>
+
+    <ul>
+      <li>Reduce image file size.</li>
+      <li>Make images easier to upload and share.</li>
+      <li>Save storage space.</li>
+      <li>Improve image loading performance when appropriate.</li>
+      <li>Use the tool directly from a web browser.</li>
+    </ul>
 
 
     <h2>More Free Image Tools</h2>
 
     <p>
-      ImageTools also provides tools for resizing images and converting
-      between popular image formats. Use the tools above to choose the
-      function you need.
+      ImageTools also provides free online tools for resizing images and
+      converting between popular image formats. You can use the
+      <a href="resize-image.html">Image Resizer</a>,
+      <a href="jpg-to-png.html">JPG to PNG converter</a>,
+      <a href="png-to-jpg.html">PNG to JPG converter</a>,
+      <a href="webp-to-jpg.html">WebP to JPG converter</a>
+      and
+      <a href="image-to-pdf.html">Image to PDF converter</a>.
     </p>
 
 
     <h2>Private Browser-Based Processing</h2>
 
     <p>
-      Our image compressor processes images directly in your browser.
-      Your selected image does not need to be uploaded to a server for
-      compression.
+      The image compressor processes the selected image directly in your
+      browser. The image does not need to be uploaded to a server for the
+      compression process.
     </p>
 
   </section>
 
 
-
   <!-- FAQ -->
 
-  <section class="faq">
+  <section class="faq" aria-labelledby="faq-title">
 
-    <h2>
+    <h2 id="faq-title">
       Frequently Asked Questions
     </h2>
 
@@ -780,7 +849,8 @@
       </summary>
 
       <p>
-        Yes. The image compressor is free to use online.
+        Yes. ImageTools provides a free online image compressor that works
+        directly in your web browser.
       </p>
 
     </details>
@@ -806,7 +876,8 @@
       </summary>
 
       <p>
-        No. ImageTools works directly in your web browser.
+        No. ImageTools works directly in your web browser without requiring
+        additional software.
       </p>
 
     </details>
@@ -832,8 +903,8 @@
       </summary>
 
       <p>
-        Yes. The website is designed to work on smartphones, tablets
-        and desktop computers.
+        Yes. The website is designed to work on smartphones, tablets and
+        desktop computers.
       </p>
 
     </details>
@@ -841,7 +912,6 @@
   </section>
 
 </main>
-
 
 
 <!-- FOOTER -->
@@ -865,7 +935,6 @@
   </p>
 
 </footer>
-
 
 
 <script>
@@ -899,7 +968,6 @@
   let compressedUrl = null;
 
 
-
   /* SELECT IMAGE */
 
   imageInput.addEventListener("change", function () {
@@ -911,9 +979,18 @@
     }
 
 
-    if (!file.type.startsWith("image/")) {
+    const allowedTypes = [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ];
 
-      alert("Please select a valid image file.");
+
+    if (!allowedTypes.includes(file.type)) {
+
+      alert(
+        "Please select a JPG, JPEG, PNG or WebP image."
+      );
 
       this.value = "";
 
@@ -960,17 +1037,23 @@
   });
 
 
-
   /* COMPRESS */
 
   compressBtn.addEventListener("click", function () {
 
     if (!selectedFile) {
 
-      alert("Please choose an image first.");
+      alert(
+        "Please choose an image first."
+      );
 
       return;
     }
+
+
+    compressBtn.disabled = true;
+
+    compressBtn.textContent = "Compressing...";
 
 
     const img = new Image();
@@ -993,6 +1076,20 @@
         canvas.getContext("2d");
 
 
+      if (!ctx) {
+
+        alert(
+          "Your browser does not support image processing."
+        );
+
+        compressBtn.disabled = false;
+
+        compressBtn.textContent = "Compress Image";
+
+        return;
+      }
+
+
       ctx.drawImage(
         img,
         0,
@@ -1006,6 +1103,11 @@
 
         function (blob) {
 
+          compressBtn.disabled = false;
+
+          compressBtn.textContent = "Compress Image";
+
+
           if (!blob) {
 
             alert(
@@ -1016,141 +1118,4 @@
           }
 
 
-          if (compressedUrl) {
-
-            URL.revokeObjectURL(compressedUrl);
-
-          }
-
-
-          compressedUrl =
-            URL.createObjectURL(blob);
-
-
-          downloadLink.href =
-            compressedUrl;
-
-
-          downloadLink.style.display =
-            "inline-block";
-
-
-          const originalKB =
-            selectedFile.size / 1024;
-
-
-          const compressedKB =
-            blob.size / 1024;
-
-
-          let reduction =
-            0;
-
-
-          if (originalKB > 0) {
-
-            reduction =
-              (
-                (1 - compressedKB / originalKB) *
-                100
-              ).toFixed(1);
-
-          }
-
-
-          if (reduction < 0) {
-            reduction = 0;
-          }
-
-
-          info.innerHTML =
-            "<strong>Original:</strong> " +
-            originalKB.toFixed(1) +
-            " KB<br>" +
-
-            "<strong>Compressed:</strong> " +
-            compressedKB.toFixed(1) +
-            " KB<br>" +
-
-            "<strong>Size Reduced:</strong> " +
-            reduction +
-            "%";
-
-        },
-
-        "image/jpeg",
-
-        0.75
-
-      );
-
-    };
-
-
-    img.onerror = function () {
-
-      alert(
-        "Could not read this image. Please try another file."
-      );
-
-    };
-
-
-    img.src =
-      URL.createObjectURL(selectedFile);
-
-  });
-
-
-
-  /* RESET */
-
-  resetBtn.addEventListener("click", function () {
-
-    imageInput.value = "";
-
-    selectedFile = null;
-
-
-    preview.style.display =
-      "none";
-
-
-    preview.removeAttribute("src");
-
-
-    info.style.display =
-      "none";
-
-
-    controls.style.display =
-      "none";
-
-
-    downloadLink.style.display =
-      "none";
-
-
-    if (originalUrl) {
-
-      URL.revokeObjectURL(originalUrl);
-
-      originalUrl = null;
-
-    }
-
-
-    if (compressedUrl) {
-
-      URL.revokeObjectURL(compressedUrl);
-
-      compressedUrl = null;
-
-    }
-
-  });
-
-</script>
-
-</body>
-</html>
+          if (compressedUrl
